@@ -3,143 +3,38 @@
 
 <div>
 
-Faca milagre ana e vitu
-
-</div>
-<div>
-
 <div class="row">
-  <div id="add" class="col-xs-6 col-md-3">
-    <a style="text-align: center;" class="thumbnail">
-		<img src="{{STATIC_URL}}img/dog.png"/>      
-		ADIÇÃO
-    </a>
-  </div>
-	<div id="sub" class="col-xs-6 col-md-3">
-    <a style="text-align: center;" class="thumbnail">
-		<img src="{{STATIC_URL}}img/fox.png"/> 
-		SUBTRAÇÃO
-    </a>
-  </div>
-  <div id="mcdu" class="col-xs-6 col-md-3">
-    <a style="text-align: center;" class="thumbnail">
-		<img src="{{STATIC_URL}}img/tucano.png"/>    
-		MCDU
-    </a>
-  </div>
-  
-  <div id="money" class="col-xs-6 col-md-3">
-    <a style="text-align: center;" class="thumbnail">
-		<img src="{{STATIC_URL}}img/eleph.png"/> 
-		APLICAÇÃO MONETÁRIA
-    </a>
-  </div>
+	<div id="add" class="col-xs-6 col-md-2">  </div>
+
+	  <div id="add" class="col-xs-6 col-md-2">
+		<a style="text-align: center;" class="thumbnail" href="/matematica/add">
+			<img src="{{STATIC_URL}}img/dog.png"/>      
+			ADIÇÃO
+		</a>
+	  </div>
+		<div id="sub" class="col-xs-6 col-md-2">
+		<a style="text-align: center;" class="thumbnail" href="/matematica/sub">
+			<img src="{{STATIC_URL}}img/fox.png"/> 
+			SUBTRAÇÃO
+		</a>
+	  </div>
+	  <div id="mcdu" class="col-xs-6 col-md-2">
+		<a style="text-align: center;" class="thumbnail" href="/matematica/mcdu">
+			<img src="{{STATIC_URL}}img/tucano.png"/>    
+			MCDU
+		</a>
+	  </div>
+	  
+	  <div id="money" class="col-xs-6 col-md-2">
+		<a style="text-align: center;" class="thumbnail" href="/matematica/money">
+			<img src="{{STATIC_URL}}img/eleph.png"/> 
+			APLICAÇÃO MONETÁRIA
+		</a>
+	  </div>
+	 <div id="add" class="col-xs-6 col-md-2">  </div>
 </div>
 
 
-
-<div style="text-align: center;"  id="mensagem" class="row"></div>
-
-<div id="extend_add">
-
-<div id="visu" >
-<div class="row">Visualização</div>
-	<div class="row">
-  <div style="text-align: center;" id="1n_vis" class="col-xs-6 col-md-3">
-   
-  </div>
-	<div id="plus" class="col-xs-6 col-md-3">
-	<a style="text-align: center;" class="thumbnail">
-		+
-    </a>
-  </div>
-  <div style="text-align: center;" id="2n_vis" class="col-xs-6 col-md-3">
-   
-  </div>
-  
-  <div style="text-align: center;" class="col-xs-6 col-md-3">
-   <input type="text" id="result_input_vis">
-   <input type="submit" id="enviar_add" name="submit">
-  </div>
-</div>
-</div>
-
-
-<div id="abstracao" >
-	<div class="row">Abstração</div>
-	<div class="row">
-  <div style="text-align: center;" id="1n_ab" class="col-xs-6 col-md-3">
-   
-  </div>
-	<div id="plus" class="col-xs-6 col-md-3">
-	<a style="text-align: center;" class="thumbnail">
-		+
-    </a>
-  </div>
-  <div style="text-align: center;" id="2n_ab" class="col-xs-6 col-md-3">
-   
-  </div>
-  
-  <div style="text-align: center;"  class="col-xs-6 col-md-3">
-   <input type="text" id="result_input_ab">
-   <input type="submit" id="enviar_add" name="submit">
-  </div>
-</div>
-</div>
-
-<div id="repeticao" >
-	<div class="row">Repetição</div>
-<div class="row">
-  <div style="text-align: center;" id="1n_add" class="col-xs-6 col-md-3">
-   
-  </div>
-	<div id="plus" class="col-xs-6 col-md-3">
-	<a style="text-align: center;" class="thumbnail">
-		+
-    </a>
-  </div>
-  <div style="text-align: center;" id="2n_add" class="col-xs-6 col-md-3">
-   
-  </div>
-  
-  <div style="text-align: center;" id="result" class="col-xs-6 col-md-3">
-   <input type="text" id="result_input_add">
-   <input type="submit" id="enviar_add" name="submit">
-  </div>
-</div>
-</div>
-</div>
-
-<div id="extend_sub">
-<div class="row">
-  <div style="text-align: center;" id="1n_sub" class="col-xs-6 col-md-3">
-   
-  </div>
-	<div id="minus" class="col-xs-6 col-md-3">
-	<a style="text-align: center;" class="thumbnail">
-		-
-    </a>
-  </div>
-  <div style="text-align: center;" id="2n_sub" class="col-xs-6 col-md-3">
-   
-  </div>
-  
-  <div style="text-align: center;" id="result" class="col-xs-6 col-md-3">
-   <input type="text" id="result_input_sub">
-   <input type="submit" id="enviar_sub" name="submit">
-  </div>
-</div>
-</div>
-
-
-<div id="extend_mcdu">
-mdcu
-</div>
-
-
-<div id="extend_money">
-money
-</div>
 </div>
 
 {% endblock %}

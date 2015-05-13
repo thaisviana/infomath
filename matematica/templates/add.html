@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% block content %}
+<div>
+   <h4 style="text-align: center;" >
+		<img src="{{STATIC_URL}}img/dog.png"/>      
+		Oi, vamos aprender a somar juntos?
+		<div id="mensagem"></div>
+    </h4>
+</div>
+
+<div id="visu">
+
+<hr>
+<a class="a_vis">Visualização</a>
+<hr>
+<div class="row" id='vis_content'></div>
+<hr>
+</div>
+
+<div id="abst">
+<a class="a_abs">Abstracao</a>
+<hr>
+<div id="abs_content"></div>
+<hr>
+</div>
+
+<div id="rep">
+<a class="a_rep">Repetição</a>
+<hr>
+<div id="rep_content"></div>
+<hr>
+</div>
+{% endblock %}
