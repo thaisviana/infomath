@@ -13,21 +13,31 @@
 <hr>
 <a class="a_vis">Visualização</a>
 <hr>
-<div class="row" id='vis_content'></div>
+<div class="row" id='vis_content'>
+	<div class='col-md-3' id='r_vis'> 
+		<input type='text' id='v_resultado' class='form-control'>
+	</div>
+	<input type='button' id='vis_enviar' class='btn btn-default' value='Enviar'>
+</div>
 <hr>
 </div>
 
 <div id="abst">
 <a class="a_abs">Abstracao</a>
 <hr>
-<div id="abs_content"></div>
+<div id="abs_content">
+	<div class='row' id='r_abs'> 
+		<input type='text' class='col-md-3' id='a_resultado' > 
+		<input type='button' class='col-md-1' id='abs_enviar' value='Enviar'>
+	</div>
+</div>
 <hr>
 </div>
 
 <div id="rep">
 <a class="a_rep">Repetição</a>
 <hr>
-<div id="rep_content"></div>
+	<div id="rep_content"></div>
 <hr>
 </div>
 {% endblock %}
