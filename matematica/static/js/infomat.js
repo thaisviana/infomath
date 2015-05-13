@@ -33,7 +33,8 @@ function calcular_vis() {
 	var v1= $("#n1_vis").data( "role" );
 	var v2 = $("#n2_vis").data( "role" );
 	if($("#v_resultado").val() == (v1+v2)){
-		$("#mensagem").text("Acertou");
+		$("#mensagem").append("<div>Acertou</div>");
+		$("#mensagem").children().fadeOut("slow");
 		$("#op_vis").remove();
 		$("#n1_vis").remove();
 		$("#n2_vis").remove();
@@ -42,7 +43,8 @@ function calcular_vis() {
 		carregar_vis()
 	}else{
 		$("#v_resultado").val("");
-		$("#mensagem").text("Errou");
+		$("#mensagem").append("<div>Errado</div>");
+		$("#mensagem").children().fadeOut("slow");
 	}
      
 }
@@ -69,16 +71,18 @@ function calcular_abs() {
 	var v1= $("#n1_abs").data( "role" );
 	var v2 = $("#n2_abs").data( "role" );
 	if($("#a_resultado").val() == (v1+v2)){
-		$("#mensagem").text("Acertou");
+		$("#mensagem").append("<div>Acertou</div>");
 		$("#n1_abs").remove();
 		$("#n2_abs").remove();
 		$("#op_a").remove();
 		$("#borda_abs").remove();
 		$("#a_resultado").val("");
 		carregar_abs()
+		$("#mensagem").children().fadeOut("slow");
 	}else{
 		$("#a_resultado").val("");
-		$("#mensagem").text("Errou");
+		$("#mensagem").append("<div>Errado</div>");
+		$("#mensagem").children().fadeOut("slow");
 	}
      
 }
