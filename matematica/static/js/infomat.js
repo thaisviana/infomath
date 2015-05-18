@@ -3,6 +3,31 @@ $(function() {
 	var n2=0;
 	var resultado_correto =0;
 	
+	$("#numero").html("<h2 style='text-align: center;'> Número:"+(Math.floor(Math.random() * 9999) + 1)+"</h2>");
+	
+	$("#corrigir").click(function() {
+		var mensagem ="";
+		var milhar = $("#M").val() *100;
+		var centena = $("#C").val() *10;
+		var dezena = $("#D").val() *1;
+		var unidade = $("#U").val();
+		var result = milhar+centena+dezena+unidade;
+		alert(result);
+		if($("#numero").text() == result){
+			mensagem = "<h3 style='text-align: center;'>Acertou!</h3>";
+			$("#numero").html("<h2 style='text-align: center;'>"+(Math.floor(Math.random() * 9999) + 1)+"</h2>");
+		}else{
+			mensagem = "<h3 style='text-align: center;'>Resposta errada!</h3>";
+		}
+		$("#M").val("");
+		$("#C").val(""); 
+		$("#D").val(""); 
+		$("#U").val("");
+		$("#mensagem").append(mensagem);
+		$("#mensagem").children().fadeOut("xslow");
+	});
+	
+	
 	$('#vis_content').hide();
 	$('#r_abs').hide();
 	
@@ -32,20 +57,20 @@ $(function() {
 function calcular_vis() {
 	var v1= $("#n1_vis").data( "role" );
 	var v2 = $("#n2_vis").data( "role" );
+	var mensagem ="";
 	if($("#v_resultado").val() == (v1+v2)){
-		$("#mensagem").append("<div>Acertou</div>");
-		$("#mensagem").children().fadeOut("slow");
+		mensagem ="<div>Acertou!</div>";
 		$("#op_vis").remove();
 		$("#n1_vis").remove();
 		$("#n2_vis").remove();
 		$("#borda_vis").remove();
-		$("#v_resultado").val("");
 		carregar_vis()
 	}else{
-		$("#v_resultado").val("");
-		$("#mensagem").append("<div>Errado</div>");
-		$("#mensagem").children().fadeOut("slow");
+		mensagem ="<div>Resposta Errada</div>";
 	}
+	$("#v_resultado").val("");
+		$("#mensagem").append(mensagem);
+		$("#mensagem").children().fadeOut("xslow");
      
 }
 function carregar_vis() {
@@ -70,47 +95,50 @@ function carregar_vis() {
 function calcular_abs() {
 	var v1= $("#n1_abs").data( "role" );
 	var v2 = $("#n2_abs").data( "role" );
+	var mensagem ="";
 	if($("#a_resultado").val() == (v1+v2)){
-		$("#mensagem").append("<div>Acertou</div>");
+		mensagem = "<div>Acertou</div>";
 		$("#n1_abs").remove();
 		$("#n2_abs").remove();
 		$("#op_a").remove();
-		$("#borda_abs").remove();
-		$("#a_resultado").val("");
+		$("#borda_abs4").remove();$("#borda_abs").remove();$("#borda_abs3").remove();
 		carregar_abs()
-		$("#mensagem").children().fadeOut("slow");
 	}else{
-		$("#a_resultado").val("");
-		$("#mensagem").append("<div>Errado</div>");
-		$("#mensagem").children().fadeOut("slow");
+		mensagem = "<div>Resposta Errada</div>";
 	}
-     
+     $("#a_resultado").val("");
+		$("#mensagem").append(mensagem);
+		$("#mensagem").children().fadeOut("xslow");
 }
 
 
 function carregar_abs() {
      	var img1="";
 		var img ="";
-		n1 = Math.floor(Math.random() * 10) + 1;
-		n2 = Math.floor(Math.random() * 10) + 1;
-		
-		img1 = "<img src='/static/img/numbers/"+n1+".png' />";
-		img = "<img src='/static/img/numbers/"+n2+".png' />";
-		if(n1==10){
-			img1 = "<img src='/static/img/numbers/1.png' /><img src='/static/img/numbers/0.png' />";
+		u1 = Math.floor(Math.random() * 9) + 1;
+		u2 = Math.floor(Math.random() * 9) + 1;
+		d2 = Math.floor(Math.random() * 9) + 1;
+		d1 = Math.floor(Math.random() * 9) + 1;	
+		img1 = "<img  src='/static/img/numbers/"+d1+".png' /><img  class='border-left' ' src='/static/img/numbers/"+u1+".png' />";
+		img = "<img src='/static/img/numbers/"+d2+".png' /><img class='border-left' src='/static/img/numbers/"+u2+".png' />";
+		/*if(n1==10){
+			img1 = "<img src='/static/img/numbers/1.png' /><img src='/static/img/numbers/0.png' /><img src='/static/img/numbers/1.png' /><img src='/static/img/numbers/0.png' />";
 			if(n2!=10)
-				img = "<img src='/static/img/numbers/0.png' /><img src='/static/img/numbers/"+n2+".png' />";
+				img = "<img src='/static/img/numbers/0.png' /><img src='/static/img/numbers/"+d2+".png' /><img src='/static/img/numbers/0.png' /><img src='/static/img/numbers/"+u2+".png' />";
 		}
 		if(n2==10){
 			if(n1!=10)
-				img1 = "<img src='/static/img/numbers/0.png' /><img src='/static/img/numbers/"+n1+".png' />";
-			img = "<img src='/static/img/numbers/1.png' /><img src='/static/img/numbers/0.png' />";
-		}
-	
-		var div_borda = "<div class='col-md-2' id='borda_abs'></div>";
+				img1 = "<img src='/static/img/numbers/0.png' /><img src='/static/img/numbers/"+d1+".png' /><img src='/static/img/numbers/0.png' /><img src='/static/img/numbers/"+u1+".png' />";
+			img = "<img src='/static/img/numbers/1.png' /><img src='/static/img/numbers/0.png' /><img src='/static/img/numbers/1.png' /><img src='/static/img/numbers/0.png' />";
+		}*/
+		var n1 = (d1*10) +u1;
+		var n2 = (d2*10) +u2;	
+		var div_borda = "<div class='col-md-1' id='borda_abs'></div>";
+		var div_borda4 = "<div class='col-md-3' id='borda_abs4'></div>";
+		var div_borda3 = "<div class='col-md-1' id='borda_abs3'></div>";
 		var div_n1 = "<div  id='n1_abs' data-role='"+n1+"''> "+img1+"</div>";
-		var div_n2 = "<div class='col-md-3'  id='n2_abs' data-role='"+n2+"'> "+img+"</div>";
+		var div_n2 = "<div class='col-md-3'   id='n2_abs' data-role='"+n2+"'> "+img+"</div>";
 		var div_op = "<div class='col-md-2' id='op_a' style='text-align: center;'> <h1>+</h1></div>";
 	
-		$("#r_abs").before(div_borda+ div_n1+div_op+div_n2);
+		$("#r_abs").before(div_borda4+div_n1+div_borda3+div_op+div_n2+div_borda);
 }

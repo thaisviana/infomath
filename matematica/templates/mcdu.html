@@ -1,6 +1,58 @@
 {% extends "index.html" %}
 {% block content %}
 
-<h6>mcduuuuuuuuuuuuu</h6>
+<div class="row">
+&nbsp
+ </div>
+	<div>
+   <h4 style="text-align: center;" >
+		<img src="{{STATIC_URL}}img/tucano.png"/>      
+		Oi, vamos aprender a quadro de valor de lugar?
+		<div id="mensagem">
+		</div>
+    </h4>
+</div>
+
+ 
+ <div class="row" >
+	<div  class="col-md-2" #id="numeros_todos">
+		<ul>
+			<li><img src="{{ STATIC_URL }}img/numbers/1.png"/></li>
+			<li><img src="{{ STATIC_URL }}img/numbers/2.png"/></li>
+			<li><img src="{{ STATIC_URL }}img/numbers/3.png"/></li>
+			<li><img src="{{ STATIC_URL }}img/numbers/4.png"/></li>
+			<li><img src="{{ STATIC_URL }}img/numbers/5.png"/></li>
+			<li><img src="{{ STATIC_URL }}img/numbers/6.png"/></li>
+			<li><img src="{{ STATIC_URL }}img/numbers/7.png"/></li>
+			<li><img src="{{ STATIC_URL }}img/numbers/8.png"/></li>
+			<li><img src="{{ STATIC_URL }}img/numbers/9.png"/></li>
+
+		</ul>
+	</div>
+	  <div class="col-md-10" #id="content">
+	 
+		 <div class="row" id="numero">
+
+		 </div>
+		 
+		<div class="row">
+			<div class="col-md-2" ></div>
+		  <div class="col-md-2" style="text-align: center;  border-radius: 25px;  border: 2px solid #456eba; background: #456eba;"><img src="{{STATIC_URL}}img/m.png"/></div>
+		  <div class="col-md-2" style="text-align: center;  border-radius: 25px;  border: 2px solid #d7e836; background: #d7e836;"><img src="{{STATIC_URL}}img/c.png"/></div>
+		  <div class="col-md-2" style="text-align: center;  border-radius: 25px;  border: 2px solid #e8366c; background: #e8366c;"><img src="{{STATIC_URL}}img/d.png"/></div>
+		  <div class="col-md-2" style="text-align: center;  border-radius: 25px;  border: 2px solid #3bb13b; background: #3bb13b;"><img src="{{STATIC_URL}}img/u.png"/></div>
+		  <div class="col-md-2" ></div>
+		 
+		</div>
+		<div class="row">
+		  <div class="col-md-2" ></div>
+		  <div class="col-md-2"><input style="text-align: center;" type='text' id='M' class='form-control input-lg'></div>
+		  <div class="col-md-2"><input style="text-align: center;" type='text' id='C' class='form-control input-lg'></div>
+		  <div class="col-md-2"><input style="text-align: center;" type='text' id='D' class='form-control input-lg'></div>
+		  <div class="col-md-2"><input style="text-align: center;" type='text' id='U' class='form-control input-lg'></div>
+		  <div class="col-md-2" ><input type='button' id='corrigir' class='btn btn-default' value='Corrigir'></div>
+		</div>
+	</div>
+ </div>
 
 {% endblock %}
