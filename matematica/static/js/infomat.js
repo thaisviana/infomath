@@ -3,18 +3,26 @@ $(function() {
 	var n2=0;
 	var resultado_correto =0;
 	
-	
 	$('#vis_content').hide();
 	$('#r_abs').hide();
+	$('#rep').hide();
+	$('#bowl').hide();
 	
-	$( ".a_vis" ).click(function() {
+	$("#v_menu").click(function() {
 		carregar_vis();
 		$('#vis_content').show();
+		$('#r_abs').hide();
+		$('#abs_content').hide();
+		$('#rep').hide();
 	});
+		
 	
-	$( ".a_abs" ).click(function() {
+	$( "#a_menu" ).click(function() {
 		carregar_abs();
 		$('#r_abs').show();
+		$('#vis_content').hide();
+		$('#abs_content').show();
+		$('#rep').hide();
 	});
 	
 	if ($('#vis_content').length ) {
@@ -31,11 +39,12 @@ $(function() {
 		
 });
 function calcular_vis() {
+	
 	var v1= $("#n1_vis").data( "role" );
 	var v2 = $("#n2_vis").data( "role" );
 	var mensagem ="";
 	if($("#v_resultado").val() == (v1+v2)){
-		mensagem ="<div>Acertou!</div>";
+		mensagem ="<div><h1>Acertou!</h1></div>";
 		$("#op_vis").remove();
 		$("#n1_vis").remove();
 		$("#n2_vis").remove();
@@ -46,7 +55,7 @@ function calcular_vis() {
 	}
 	$("#v_resultado").val("");
 		$("#mensagem").append(mensagem);
-		$("#mensagem").children().fadeOut("xslow");
+		$("#mensagem").children().fadeOut(5000);
      
 }
 function carregar_vis() {
@@ -73,7 +82,7 @@ function calcular_abs() {
 	var v2 = $("#n2_abs").data( "role" );
 	var mensagem ="";
 	if($("#a_resultado").val() == (v1+v2)){
-		mensagem = "<div>Acertou</div>";
+		mensagem = "<div><h1>Acertou!</h1></div>";
 		$("#n1_abs").remove();
 		$("#n2_abs").remove();
 		$("#op_a").remove();
@@ -84,7 +93,7 @@ function calcular_abs() {
 	}
      $("#a_resultado").val("");
 		$("#mensagem").append(mensagem);
-		$("#mensagem").children().fadeOut("xslow");
+		$("#mensagem").children().fadeOut(5000);
 }
 
 

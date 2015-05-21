@@ -1,29 +1,54 @@
 $(function() {
-	$("#numero").html("<h2 style='text-align: center;'> Número:"+(Math.floor(Math.random() * 9999) + 1)+"</h2>");
-	
+	var numero = (Math.floor(Math.random() * 9999) + 1);
+	$("#numero").html("<h2 style='text-align: center;'> Número:"+numero+"</h2>");
+	$("#numero").attr("data-role", numero)
+	 var m = 0; var c = 0;var d = 0;var u = 0;
 	$( "li" ).each(function( index ) {
 		$(this).draggable();
 	});
 	
+	$("#m").droppable({
+      drop: function( event, ui ) {
+		$(this).css( "border", "12px solid #456eba" );
+        m = (ui.draggable.attr('id'));
+      }
+    });
+	
+	$("#c").droppable({
+      drop: function( event, ui ) {
+		$(this).css( "border", "12px solid #d7e836 " );
+       	c =(ui.draggable.attr('id'));
+      }
+    });
+	
+	$("#d").droppable({
+      drop: function( event, ui ) {
+		$(this).css( "border", "12px solid #e8366c" );
+        d =(ui.draggable.attr('id'));
+      }
+    });
+	
+	$("#u").droppable({
+      drop: function( event, ui ) {
+		$(this).css( "border", "12px solid  #3bb13b" );
+        u = (ui.draggable.attr('id'));
+      }
+    });
+	
+	
 	$("#corrigir").click(function() {
-		var mensagem ="";
-		var milhar = $("#M").val() *100;
-		var centena = $("#C").val() *10;
-		var dezena = $("#D").val() *1;
-		var unidade = $("#U").val();
+		var n = $("#numero").data( "role" ) *1;
+		var milhar = (m*1000);
+		var centena = (c*100);
+		var dezena = (d*10);
+		var unidade = (u*1);
+		
 		var result = milhar+centena+dezena+unidade;
-		alert(result);
-		if($("#numero").text() == result){
-			mensagem = "<h3 style='text-align: center;'>Acertou!</h3>";
-			$("#numero").html("<h2 style='text-align: center;'>"+(Math.floor(Math.random() * 9999) + 1)+"</h2>");
+		if(result == n){
+			alert("Resposta correta");
+			location.reload();
 		}else{
-			mensagem = "<h3 style='text-align: center;'>Resposta errada!</h3>";
+			alert(result +" = " +n );
 		}
-		$("#M").val("");
-		$("#C").val(""); 
-		$("#D").val(""); 
-		$("#U").val("");
-		$("#mensagem").append(mensagem);
-		$("#mensagem").children().fadeOut("xslow");
 	});
 });

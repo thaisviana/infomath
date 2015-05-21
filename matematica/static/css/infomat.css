@@ -20,6 +20,29 @@ body {
     border-left: thick double #ff0000;
 }
 
+.borda_1{
+	text-align: center;  
+	border-radius: 25px;  
+	border: 10px solid #456eba; 
+}
+.borda_2{
+	text-align: center;  
+	border-radius: 25px;  
+	border: 10px solid #d7e836; 
+}
+.borda_3{
+	text-align: center;  
+	border-radius: 25px;  
+	border: 10px solid #e8366c; 
+}
+.borda_4{
+	text-align: center;  
+	border-radius: 25px;  
+	border: 10px solid #3bb13b; 
+}
+
+
+
 .footer-inner { padding: 20px; }
 .footer-inner .sponsors { float: right; }
 .footer-inner .sponsors > div { margin-left: 10px; }

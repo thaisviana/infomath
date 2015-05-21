@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
 <div>
-   <h4 style="text-align: center;" >
+   <h4 style="text-adivgn: center;" >
 		<img src="{{STATIC_URL}}img/dog.png"/>      
 		Oi, vamos aprender a somar juntos?
 		<div id="mensagem">
@@ -9,22 +9,28 @@
     </h4>
 </div>
 
+<div class="row" align="right">
+  <div id="v_menu" class='col-md-2' ><a ><img src="{{STATIC_URL}}img/vis.png"/> </a></div>
+  <div id="a_menu" class='col-md-2' ><a ><img src="{{STATIC_URL}}img/abs.png"/></a></div>
+  <div id="r_menu" class='col-md-2' style="position: relative; top: +20px;" ><a ><img src="{{STATIC_URL}}img/rep.png"/></a></div>
+</div>
+
 <div id="visu">
 
-<hr>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="a_vis"><img src="{{STATIC_URL}}img/vis.png"/> </a>
+<!--&nbsp;&nbsp;&nbsp;&nbsp;<a class="a_vis"><img src="{{STATIC_URL}}img/vis.png"/> </a>-->
 
 <div class="row" id='vis_content'>
 	<div class='col-md-3' id='r_vis'> 
 		<input type='text' id='v_resultado' class='form-control'>
 	</div>
 	<input type='button' id='vis_enviar' class='btn btn-default' value='Enviar'>
+
 </div>
-<hr>
+<div id="bowl" align="center"><a ><img src="{{STATIC_URL}}img/bowl.png"/> </a></div>
 </div>
 
 <div id="abst">
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="a_abs"><img src="{{STATIC_URL}}img/abs.png"/></a>
+<!--&nbsp;&nbsp;&nbsp;&nbsp;<a class="a_abs"><img src="{{STATIC_URL}}img/abs.png"/></a>-->
 
 <div id="abs_content">
 	<div class='row' id='r_abs'> 
@@ -34,13 +40,11 @@
 		<input type='button' id='abs_enviar' class='btn btn-default' value='Enviar'>
 	
 	</div>
-<hr>
 </div>
 
 <div id="rep">
 	&nbsp;&nbsp;&nbsp;&nbsp;<a class="a_rep"><img src="{{STATIC_URL}}img/rep.png"/></a>
 
 	<div id="rep_content"></div>
-<hr>
 </div>
 {% endblock %}
